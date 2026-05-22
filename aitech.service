@@ -1,0 +1,18 @@
+[Unit]
+Description=AITech Platform (Next.js + Streamlit)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/root/Website
+ExecStart=/root/Website/start_platform.sh
+ExecStop=/root/Website/stop_platform.sh
+User=root
+Group=root
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
