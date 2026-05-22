@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
-import dynamic from "next/dynamic"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import AIArchitectureLayers from "@/components/visualizations/AIArchitectureLayers"
 import PlatformTechStack from "@/components/sections/PlatformTechStack"
-
-const TelecomMap = dynamic(() => import("@/components/visualizations/TelecomMap"), { ssr: false })
+import TelecomMap from "@/components/visualizations/TelecomMapClient"
 
 export const metadata: Metadata = {
     title: "Platform Ecosystem | Integra AITech",
