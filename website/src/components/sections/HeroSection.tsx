@@ -3,17 +3,16 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/Button"
-import dynamic from "next/dynamic"
-const Network3D = dynamic(() => import("@/components/visualizations/Network3D"), { ssr: false })
+import NetworkBackground from "@/components/visualizations/NetworkBackground"
 import Link from "next/link"
 import { ArrowRight, LayoutGrid } from "lucide-react"
 
 export default function HeroSection() {
     return (
         <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center pt-16 pb-24 overflow-hidden isolate">
-            {/* 3D Background */}
+            {/* Network Background */}
             <div className="absolute inset-0 pointer-events-none -z-20 opacity-80">
-                <Network3D />
+                <NetworkBackground />
             </div>
 
             {/* Overlay Gradients */}
