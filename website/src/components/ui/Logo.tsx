@@ -6,29 +6,29 @@ export interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { height: 36, width: 29, primarySize: "text-sm", secondarySize: "text-[10px]" },
-  md: { height: 48, width: 38, primarySize: "text-base", secondarySize: "text-xs" },
-  lg: { height: 64, width: 51, primarySize: "text-xl", secondarySize: "text-sm" },
+  sm: { size: 36, primarySize: "text-sm",  secondarySize: "text-[10px]" },
+  md: { size: 44, primarySize: "text-base", secondarySize: "text-xs"    },
+  lg: { size: 60, primarySize: "text-xl",  secondarySize: "text-sm"     },
 }
 
 export default function Logo({ size = "md", showName = true }: LogoProps) {
-  const dimensions = sizeMap[size]
+  const { size: px, primarySize, secondarySize } = sizeMap[size]
 
   return (
     <div className="flex items-center gap-3">
       <Image
-        src="/logo/Logo.png"
+        src="/logo/Logo.svg"
         alt="PT. Integra Aplikasi Artifisial Logo"
-        width={dimensions.width}
-        height={dimensions.height}
+        width={px}
+        height={px}
         className="flex-shrink-0 object-contain"
         priority
       />
 
       {showName && (
         <div className="flex flex-col leading-tight">
-          <span className={`${dimensions.primarySize} font-bold text-blue-600 tracking-tight`}>PT. Integra</span>
-          <span className={`${dimensions.secondarySize} font-semibold text-gray-500 tracking-wide`}>Aplikasi Artifisial</span>
+          <span className={`${primarySize} font-bold text-blue-600 tracking-tight`}>PT. Integra</span>
+          <span className={`${secondarySize} font-semibold text-gray-500 tracking-wide`}>Aplikasi Artifisial</span>
         </div>
       )}
     </div>

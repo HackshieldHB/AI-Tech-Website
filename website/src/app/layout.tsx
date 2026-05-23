@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollProgress from "@/components/visualizations/ScrollProgress";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 // Using space_grotesk directly
@@ -27,6 +28,7 @@ export default function RootLayout({
                     defaultTheme="light"
                     disableTransitionOnChange
                 >
+                    <ScrollProgress />
                     <Navbar />
                     <main className="flex-1">
                         {children}

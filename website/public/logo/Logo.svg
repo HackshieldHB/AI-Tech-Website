@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none">
+  <defs>
+    <filter id="brainGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feFlood flood-color="#60A5FA" flood-opacity="0.28" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient glow halo -->
+  <ellipse cx="120" cy="100" rx="108" ry="88" fill="rgba(59,130,246,0.07)"/>
+
+  <!-- Brain body -->
+  <path
+    d="M 120,28
+       C 90,18 52,28 36,54
+       C 22,68 22,90 32,108
+       C 22,122 24,142 40,154
+       C 56,166 78,164 96,158
+       C 104,165 112,168 120,167
+       C 128,168 136,165 144,158
+       C 162,164 184,166 200,154
+       C 216,142 218,122 208,108
+       C 218,90 218,68 204,54
+       C 188,28 150,18 120,28 Z"
+    fill="#2563EB"
+    filter="url(#brainGlow)"
+  />
+
+  <!-- Brain fold lines (sulci) -->
+  <path d="M 68,42 C 60,60 62,78 68,93"   stroke="rgba(191,219,254,0.68)" stroke-width="4"   stroke-linecap="round" fill="none"/>
+  <path d="M 88,30  C 80,50 82,68 88,83"   stroke="rgba(191,219,254,0.55)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M 120,28 C 116,44 116,60 120,75" stroke="rgba(191,219,254,0.38)" stroke-width="3"   stroke-linecap="round" fill="none"/>
+  <path d="M 152,30 C 160,50 158,68 152,83" stroke="rgba(191,219,254,0.55)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M 172,42 C 180,60 178,78 172,93" stroke="rgba(191,219,254,0.68)" stroke-width="4"   stroke-linecap="round" fill="none"/>
+  <path d="M 44,122 C 56,130 72,134 84,133" stroke="rgba(191,219,254,0.42)" stroke-width="3"   stroke-linecap="round" fill="none"/>
+  <path d="M 196,122 C 184,130 168,134 156,133" stroke="rgba(191,219,254,0.42)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Hexagon badge — flat-top, center (120,98), radius 28 -->
+  <!-- Vertices: L(92,98)  UL(106,74)  UR(134,74)  R(148,98)  LR(134,122)  LL(106,122) -->
+  <polygon
+    points="92,98 106,74 134,74 148,98 134,122 106,122"
+    fill="#1D4ED8"
+    stroke="rgba(147,197,253,0.82)"
+    stroke-width="2.5"
+  />
+
+  <!-- Crystal / icosahedron wireframe inside hexagon -->
+  <!-- Key vertices: top(120,79)  ul(107,89)  ur(133,89)  cl(107,98)  cr(133,98)  ll(107,107)  lr(133,107)  bot(120,118) -->
+  <g stroke="rgba(186,230,253,0.92)" stroke-width="1.7" stroke-linecap="round" fill="none">
+    <!-- Top → upper ring -->
+    <line x1="120" y1="79" x2="107" y2="89"/>
+    <line x1="120" y1="79" x2="120" y2="89"/>
+    <line x1="120" y1="79" x2="133" y2="89"/>
+    <!-- Upper ring horizontals -->
+    <line x1="107" y1="89" x2="120" y2="89"/>
+    <line x1="120" y1="89" x2="133" y2="89"/>
+    <!-- Upper ring → waist -->
+    <line x1="107" y1="89" x2="107" y2="98"/>
+    <line x1="120" y1="89" x2="120" y2="98"/>
+    <line x1="133" y1="89" x2="133" y2="98"/>
+    <!-- Waist facet diagonals -->
+    <line x1="107" y1="89" x2="120" y2="98"/>
+    <line x1="133" y1="89" x2="120" y2="98"/>
+    <!-- Waist horizontals -->
+    <line x1="107" y1="98" x2="120" y2="98"/>
+    <line x1="120" y1="98" x2="133" y2="98"/>
+    <!-- Waist → lower ring -->
+    <line x1="107" y1="98" x2="107" y2="107"/>
+    <line x1="120" y1="98" x2="120" y2="107"/>
+    <line x1="133" y1="98" x2="133" y2="107"/>
+    <!-- Lower facet diagonals -->
+    <line x1="107" y1="98" x2="120" y2="107"/>
+    <line x1="133" y1="98" x2="120" y2="107"/>
+    <!-- Lower ring horizontals -->
+    <line x1="107" y1="107" x2="120" y2="107"/>
+    <line x1="120" y1="107" x2="133" y2="107"/>
+    <!-- Lower ring → bottom vertex -->
+    <line x1="107" y1="107" x2="120" y2="118"/>
+    <line x1="120" y1="107" x2="120" y2="118"/>
+    <line x1="133" y1="107" x2="120" y2="118"/>
+  </g>
+</svg>
